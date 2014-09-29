@@ -1,0 +1,24 @@
+Steps to illumination
+Step 1: edge detection
+Step 2: Hough space acummulation
+
+
+Overall algorithm
+
+detect(Image i){
+	compute Hn by edge extraction
+	compute Hn,l from histograms
+	for all(l)
+		compute feature vectors from histograms
+		compute segment S
+		for all (S)
+			compute probability
+			if (P(Si)>= threshold)
+				QR detection algorithm
+			endif
+		end for
+	end for
+}
+
+TODO for today :D... 
+download HOG 2005 paper
