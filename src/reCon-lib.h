@@ -36,7 +36,7 @@ std::queue<Robot*>* getRobots(cv::Mat image) {
 	return robots;
 }
 
-cv::Mat getSobel(cv::Mat src, float threshold) {
+cv::Mat getSobel(cv::Mat src) {
 
 	cv::Mat sobel;
 	cv::Mat src_gray;
@@ -71,7 +71,7 @@ cv::Mat getSobel(cv::Mat src, float threshold) {
 	return sobel;
 }
 
-cv::Mat getScharr(cv::Mat src, float threshold) {
+cv::Mat getScharr(cv::Mat src) {
 
 	cv::Mat scharr;
 	cv::Mat src_gray;
@@ -106,7 +106,37 @@ cv::Mat getScharr(cv::Mat src, float threshold) {
 	return scharr;
 }
 
-void getHOG(cv::Mat image) {
+void getHOG(cv::Mat image, float threshold) {
+	//get gradient orientation
+	//return gradient matrix
+
+	//Step 1:
+	// Normalize gamma & color
+/*
+	[−1, 0, 1] gradient filter (not implemented yet, seems to be a good choice to improve O(t) )
+	Scharr
+	Sobel (first algorithm to take in consideration)
+*/
+
+	cv::Mat sobel = getSobel(image);
+
+	//Step 2:
+	// Compute Gradients
+
+	cv::Mat gradients(sobel);
+
+/*
+	we calculate separate gradients for
+	each colour channel, and take the one with the largest norm
+	as the pixel’s gradient vector.
+*/
+	for (int i = 0; i < sobel.rows; ++i) {
+		for (int j = 0; j < sobel.cols; ++j) {
+			//gradients.at(i,j) = gradient
+		}
+	}
+
+
 }
 
 #endif /* RECON_LIB_H_ */

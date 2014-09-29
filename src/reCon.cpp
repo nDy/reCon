@@ -42,7 +42,7 @@ int main(int argc, const char** argv) {
 				flip(frame, frameCopy, 0);
 
 			Mat sobel;
-			sobel = getSobel(frameCopy, 0);
+			sobel = getSobel(frameCopy);
 			namedWindow("result", 1);
 			imshow("result", sobel);
 
