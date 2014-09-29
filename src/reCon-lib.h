@@ -123,8 +123,6 @@ void getHOG(cv::Mat image, float threshold) {
 	//Step 2:
 	// Compute Gradients
 
-	cv::Mat gradients(sobel);
-
 /*
 	we calculate separate gradients for
 	each colour channel, and take the one with the largest norm
@@ -132,6 +130,7 @@ void getHOG(cv::Mat image, float threshold) {
 */
 	for (int i = 0; i < sobel.rows; ++i) {
 		for (int j = 0; j < sobel.cols; ++j) {
+			//Question: how to calculate every pixel's gradient?
 			//gradients.at(i,j) = gradient
 		}
 	}
